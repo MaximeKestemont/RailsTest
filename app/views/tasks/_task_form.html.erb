@@ -1,0 +1,13 @@
+ <div class="modal-header">
+ 	<h1> New task </h1>
+ 	<%= simple_form_for task, class: 'clearfix' do |f| %>
+ 		<div class="modal-body">
+ 			 <%= f.input :title %>
+ 			 <%= f.input :note %>
+ 			 <%= f.input :completed, as: :string, input_html: {class: 'datepicker'} %>
+ 		</div>
+ 		<div class="modal-footer">
+        	<%= f.submit 'Save' %>
+      	</div>
+ 	<% end %>
+ </div>
