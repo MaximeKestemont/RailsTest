@@ -21,34 +21,8 @@
   </div>
 </div>
 
-<div class="container">
-  <% if @tasks.empty? %>
-     <span class ="text-warning">There are no tasks!</span>
-  <% else %>
-  	 <span class ="text-warning">There are tasks!</span>
-  	 <table class ="table table-bordered table-hover">
-  	 	<head>
-  	 		<tr>
-  	 			<th> Title </th>
-  	 			<th> Created at </th>
-  	 			<th> Completed </th>
-  	 		</tr>
-  	 	</head>
-
-  	 	<body>
-  	 		<% @tasks.each do |task| %>
-  	 			<tr>
-  	 				<td><strong> <%= task.title %> </strong></td>
-  	 				<td class="text-info"> <%= task.created_at %> </td>
-  	 				<td class="text-success"> <%= task.completed %> </td>
-
-  	 			</tr>
-  	 		<% end %>
-  	 	</body>
-
-  	 </table>
-
-  <% end %>
+<div id="task-list" class="container">
+	<%= render partial: 'tasks/task_list', locals: {tasks: @tasks} %>
 </div>
 
 
