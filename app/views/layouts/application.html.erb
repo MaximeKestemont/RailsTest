@@ -9,29 +9,20 @@
 
 <body>
 
-<%= yield %>
-
 <div class="row-fluid">
   <div class="span10 offset1">
-    <div class="hero-unit">
+    <div class="hero-unit text-center">
       <h1>ToDo</h1>
       <p>Welcome to the tutorial's ToDo application</p>
-        <%= link_to 'New task', new_task_path, class: 'btn btn-primary', remote: true %>
+      <strong><%= link_to 'New task', new_task_path, class: 'btn btn-primary', remote: true %></strong>
+      <div class="text-center"><strong><%= current_user.email %></strong></div>
+      <div class="text-center"><strong><%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary' %></strong></div>
     </div>
   </div>
 </div>
 
-<div id="task-list" class="container">
-	<%= render partial: 'tasks/task_list', locals: {tasks: @tasks} %>
-</div>
 
-
-
-<div id="modal" class="modal fade">
-</div>
-
-
-
+<%= yield %>
 
 </body>
 </html>

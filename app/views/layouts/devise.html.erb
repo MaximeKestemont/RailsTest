@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<div class="row-fluid">
+  <div class="span10 offset1">
+    <div class="hero-unit text-center">
+      <h1>ToDo</h1>
+      <p>Welcome to the tutorial's ToDo application</p>
+        <%= link_to 'New task', new_task_path, class: 'btn btn-primary', remote: true %>
+    </div>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+  	<%= render partial: "shared/flash", flash: flash %> 
+  	<%= yield %>
+  
+  </div>
+</div>
+
+</body>
+
+</html>
